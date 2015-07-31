@@ -1,0 +1,25 @@
+////////////////////////////////////////
+// Vertical alignment
+////////////////////////////////////////
+
+.vertical-align {
+    height: 100%; min-height: 100%;
+
+    white-space: nowrap;
+
+    &:before {
+        content: "";
+        height: 100%; min-height: 100%;
+        margin-right: -0.25em;
+        vertical-align: middle;
+        display: inline-block;
+    }
+}
+
+.vertical-align-wrapper {
+    width: 100%; min-width: 100%;
+
+    white-space: normal;
+    vertical-align: middle;
+    display: inline-block;
+}

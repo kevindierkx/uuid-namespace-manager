@@ -1,0 +1,9 @@
+////////////////////////////////////////
+// Layout
+////////////////////////////////////////
+
+// Setting the minimal height of the html and body
+// enables us to use the vertical align element.
+html, body {
+    height: 100%; min-height: 100%;
+}

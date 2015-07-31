@@ -1,0 +1,151 @@
+////////////////////////////////////////
+// NG-Table
+////////////////////////////////////////
+
+.ng-table th {
+    user-select: none;
+
+    &.sortable {
+        cursor: pointer;
+
+        .sort-indicator {
+            padding-right: 18px;
+            position: relative;
+
+            &:after,
+            &:before {
+                content: "";
+                margin-top: -4px;
+                border-width: 0 4px 4px;
+                border-style: solid;
+                border-color: #000 transparent;
+
+                position: absolute;
+                top: 50%;
+                right: 5px;
+
+                visibility: hidden;
+                opacity: 0;
+            }
+
+            &:before {
+                margin-top: 2px;
+                border: 4px solid transparent;
+                border-top: 4px solid #000;
+                border-bottom: none;
+            }
+
+            &:hover {
+                &:after,
+                &:before {
+                    visibility: visible;
+                    opacity: 0.6;
+                }
+            }
+        }
+
+        &.sort-desc,
+        &.sort-asc {
+            .sort-indicator,
+            .sort-indicator:hover {
+                &:before,
+                &:after {
+                    margin-top: -2px;
+                    visibility: hidden;
+                    opacity: 0;
+                }
+            }
+        }
+
+        &.sort-asc {
+            .sort-indicator,
+            .sort-indicator:hover {
+                &:after {
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+        }
+
+        &.sort-desc {
+            .sort-indicator,
+            .sort-indicator:hover {
+                &:before {
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+// .ng-table th.filter .input-filter {
+//     margin: 0;
+//     display: block;
+//     width: 100%;
+//     min-height: 30px;
+//     -webkit-box-sizing: border-box;
+//     -moz-box-sizing: border-box;
+//     box-sizing: border-box;
+// }
+
+// .ng-table + .pagination {
+//     margin-top: 0;
+// }
+
+// @media only screen and (max-width: 800px) {
+//     .ng-table-responsive {
+//         border-bottom: 1px solid #999999;
+//     }
+//
+//     .ng-table-responsive tr {
+//         border-top: 1px solid #999999;
+//         border-left: 1px solid #999999;
+//         border-right: 1px solid #999999;
+//     }
+//
+//     .ng-table-responsive td:before {
+//         position: absolute;
+//         padding: 8px;
+//         left: 0;
+//         top: 0;
+//         width: 50%;
+//         white-space: nowrap;
+//         text-align: left;
+//         font-weight: bold;
+//     }
+//
+//     .ng-table-responsive thead tr th {
+//         text-align: left;
+//     }
+//
+//     .ng-table-responsive thead tr.ng-table-filters th {
+//         padding: 0;
+//     }
+//
+//     .ng-table-responsive thead tr.ng-table-filters th form > div {
+//         padding: 8px;
+//     }
+//
+//     .ng-table-responsive td {
+//         border: none;
+//         border-bottom: 1px solid #eeeeee;
+//         position: relative;
+//         padding-left: 50%;
+//         white-space: normal;
+//         text-align: left;
+//     }
+//
+//     .ng-table-responsive td:before {
+//         content: attr(data-title-text);
+//     }
+//
+//     .ng-table-responsive,
+//     .ng-table-responsive thead,
+//     .ng-table-responsive tbody,
+//     .ng-table-responsive th,
+//     .ng-table-responsive td,
+//     .ng-table-responsive tr {
+//         display: block;
+//     }
+// }

@@ -1,44 +1,42 @@
-<?php
+<?php namespace App\Providers;
 
-namespace App\Providers;
-
-use Illuminate\Routing\Router;
-use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+use Illuminate\Support\ServiceProvider;
 
 class RouteServiceProvider extends ServiceProvider
 {
     /**
-     * This namespace is applied to the controller routes in your routes file.
-     *
-     * In addition, it is set as the URL generator's root namespace.
-     *
-     * @var string
+     * @var  array
      */
-    protected $namespace = 'App\Http\Controllers';
+    protected $routeServiceProviders = [
+
+        // Index - placeholder
+        'App\Providers\Routes\IndexRouteServiceProvider',
+
+        // API
+
+        // Angular
+        'App\Providers\Routes\Api\Angular\TemplatesRouteServiceProvider',
+
+    ];
 
     /**
-     * Define your route model bindings, pattern filters, etc.
-     *
-     * @param  \Illuminate\Routing\Router  $router
-     * @return void
+     * Register any route service providers.
      */
-    public function boot(Router $router)
+    public function register()
     {
-        //
-
-        parent::boot($router);
+        foreach ($this->routeServiceProviders as $provider) {
+            $this->app->register($this->createProvider($provider));
+        }
     }
 
     /**
-     * Define the routes for the application.
+     * Create a new provider instance.
      *
-     * @param  \Illuminate\Routing\Router  $router
-     * @return void
+     * @param  string  $provider
+     * @return \Illuminate\Support\ServiceProvider
      */
-    public function map(Router $router)
+    protected function createProvider($provider)
     {
-        $router->group(['namespace' => $this->namespace], function ($router) {
-            require app_path('Http/routes.php');
-        });
+        return new $provider($this->app);
     }
 }
