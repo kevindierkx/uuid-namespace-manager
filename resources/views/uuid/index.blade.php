@@ -1,3 +1,7 @@
+<div class="page-header">
+    <h1>Namespaces</h1>
+</div>
+
 <table class="table"
     ng-table="tableParams">
     <tbody>

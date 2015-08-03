@@ -1,9 +1,7 @@
 @include('layouts.partials.header')
 
 <div class="container">
-    <div class="page-header">
-        <h1>UUID namespace manager</h1>
-    </div>
+    @include('layouts.partials.nav-bar')
 
     {{-- Main content --}}
     <div ui-view>

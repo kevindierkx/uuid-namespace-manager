@@ -4216,24 +4216,8 @@ html, body {
   height: 100%;
   min-height: 100%; }
 
-.vertical-align {
-  height: 100%;
-  min-height: 100%;
-  white-space: nowrap; }
-  .vertical-align:before {
-    content: "";
-    height: 100%;
-    min-height: 100%;
-    margin-right: -0.25em;
-    vertical-align: middle;
-    display: inline-block; }
-
-.vertical-align-wrapper {
-  width: 100%;
-  min-width: 100%;
-  white-space: normal;
-  vertical-align: middle;
-  display: inline-block; }
+body {
+  padding-top: 20px; }
 
 .fade {
   opacity: 0;
