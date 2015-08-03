@@ -15,15 +15,10 @@ class TemplatesController extends AbstractController
     /**
      * Bind instances to the class.
      *
-     * @param  \Dingo\Api\Response\Factory  $response
      * @param  \Illuminate\Contracts\View\Factory  $viewFactory
      */
-    public function __construct(
-        Response $response,
-        ViewFactory $viewFactory
-    ) {
-        parent::__construct($response);
-
+    public function __construct(ViewFactory $viewFactory)
+    {
         $this->viewFactory = $viewFactory;
     }
 
@@ -40,6 +35,6 @@ class TemplatesController extends AbstractController
             return $this->viewFactory->make($template);
         }
 
-        return $this->response->errorNotFound();
+        return $this->response()->errorNotFound();
     }
 }

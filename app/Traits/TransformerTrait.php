@@ -1,19 +1,7 @@
-<?php namespace App\Http\Traits;
+<?php namespace App\Traits;
 
 trait TransformerTrait
 {
-    /**
-     * Create a new instance of the transformer.
-     *
-     * @return mixed
-     */
-    public function createTransformer()
-    {
-        $transformer = '\\'.ltrim($this->getTransformer(), '\\');
-
-        return new $transformer;
-    }
-
     /**
      * Returns the transformer.
      *
@@ -28,4 +16,16 @@ trait TransformerTrait
      * @return $this
      */
     abstract public function setTransformer($transformer);
+
+    /**
+     * Create a new instance of the transformer.
+     *
+     * @return mixed
+     */
+    public function createTransformer()
+    {
+        $transformer = '\\'.ltrim($this->getTransformer(), '\\');
+
+        return new $transformer;
+    }
 }

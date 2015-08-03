@@ -1,17 +1,17 @@
-<?php namespace App\Providers\Routes\Api\Angular;
+<?php namespace App\Providers\Routes\Api\Uuid;
 
 use Illuminate\Routing\Router;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
-class TemplatesRouteServiceProvider extends ServiceProvider
+class UuidRouteServiceProvider extends ServiceProvider
 {
     /**
      * @var string
      */
-    protected $namespace = 'App\Http\Controllers\Api\Angular';
+    protected $namespace = 'App\Http\Controllers\Api\Uuid';
 
     /**
-     * Define the routes for the template API.
+     * Define the routes for the UUID listing API.
      *
      * @param  \Illuminate\Routing\Router  $router
      */
@@ -25,10 +25,9 @@ class TemplatesRouteServiceProvider extends ServiceProvider
             'namespace' => $this->namespace,
         ], function ($router) {
 
-            // Index - placeholder
-            $router->get('ng-templates', [
-                'as' => 'angular.templates',
-                'uses' => 'TemplatesController@template',
+            $router->get('uuid', [
+                'as' => 'uuid.index',
+                'uses' => 'UuidController@index',
             ]);
 
         });

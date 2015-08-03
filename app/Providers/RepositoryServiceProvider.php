@@ -2,30 +2,24 @@
 
 use Illuminate\Support\ServiceProvider;
 
-class RouteServiceProvider extends ServiceProvider
+class RepositoryServiceProvider extends ServiceProvider
 {
     /**
-     * @var  array
+     * @var array
      */
-    protected $routeServiceProviders = [
+    protected $repositoryServiceProviders = [
 
-        // Index - placeholder
-        'App\Providers\Routes\IndexRouteServiceProvider',
-
-        // API
-        'App\Providers\Routes\Api\Uuid\UuidRouteServiceProvider',
-
-        // Angular
-        'App\Providers\Routes\Api\Angular\TemplatesRouteServiceProvider',
+        // UUID
+        'App\Providers\Repositories\Uuid\UuidRepositoryServiceProvider',
 
     ];
 
     /**
-     * Register any route service providers.
+     * Register any repository service providers.
      */
     public function register()
     {
-        foreach ($this->routeServiceProviders as $provider) {
+        foreach ($this->repositoryServiceProviders as $provider) {
             $this->app->register($this->createProvider($provider));
         }
     }

@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app="app">
+<html ng-app="app.init">
 <head>
     <base href="/">
     <meta charset="utf-8">
