@@ -1,35 +1,20 @@
-<table class="table"
-    ng-table="tableParams">
+<table class="table" ng-table="tableParams">
     <tbody>
         <tr ng-repeat="uuid in $data">
-            <td class="col-xs-2"
-                data-title="'Name'"
-                sortable="'name'">
-
+            <td class="col-xs-4" data-title="'Name'" sortable="'name'">
                 @{{ uuid.name }}
+                <small class="clearfix">@{{ uuid.description }}</small>
             </td>
 
-            <td class="col-xs-2"
-                data-title="'Description'"
-                sortable="'description'">
-                @{{ uuid.description }}
-            </td>
-
-            <td class="col-xs-4"
-                data-title="'UUID'"
-                sortable="'uuid'">
+            <td class="col-xs-4" data-title="'UUID'" sortable="'uuid'">
                 @{{ uuid.uuid }}
             </td>
 
-            <td class="col-xs-2"
-                data-title="'Created at'"
-                sortable="'created_at'">
+            <td class="col-xs-2" data-title="'Created at'" sortable="'created_at'">
                 @{{ uuid.created_at }}
             </td>
 
-            <td class="col-xs-2"
-                data-title="'Updated at'"
-                sortable="'updated_at'">
+            <td class="col-xs-2" data-title="'Updated at'" sortable="'updated_at'">
                 @{{ uuid.updated_at }}
             </td>
         </tr>
