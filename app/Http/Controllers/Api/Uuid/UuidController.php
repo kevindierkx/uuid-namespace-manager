@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\AbstractController;
 use App\Repositories\Uuid\UuidRepositoryInterface;
 use App\Traits\TransformerTrait;
+use App\Http\Requests\Api\Uuid\StoreUuidRequest;
 
 class UuidController extends AbstractController
 {
@@ -29,7 +30,7 @@ class UuidController extends AbstractController
     }
 
     /**
-     * Create a listing of uuids.
+     * Return a listing of UUIDs.
      *
      * @return \Dingo\Api\Http\ResponseBuilder
      */
@@ -45,6 +46,21 @@ class UuidController extends AbstractController
             $uuids,
             $this->createTransformer()
         );
+    }
+
+    /**
+     * Store a new UUID.
+     *
+     * @param  \App\Http\Requests\Api\Uuid\StoreUuidRequest  $request
+     * @return \Dingo\Api\Http\ResponseBuilder
+     */
+    public function store(StoreUuidRequest $request)
+    {
+        $uuid = $this->uuidRepository->create(
+            $request->only(['name', 'description'])
+        );
+
+        return $this->response()->created();
     }
 
     /**

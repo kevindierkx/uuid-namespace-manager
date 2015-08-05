@@ -1,0 +1,19 @@
+////////////////////////////////////////
+// Forms
+////////////////////////////////////////
+
+.form-group {
+    .help-block {
+        &.error {
+            display: none;
+        }
+    }
+
+    &.has-error {
+        .help-block {
+            &.error {
+                display: block;
+            }
+        }
+    }
+}

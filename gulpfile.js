@@ -33,6 +33,7 @@ elixir(function(mix) {
             '../../../bower_components/angular-ui-router/release/angular-ui-router.js',
             '../../../bower_components/angular-resource/angular-resource.min.js',
             '../../../bower_components/ng-table/dist/ng-table.js',
+            '../../../bower_components/angular-bootstrap-show-errors/src/showErrors.js',
         ],
         'public/js/library.js'
     )

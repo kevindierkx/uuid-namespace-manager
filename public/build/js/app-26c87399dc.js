@@ -76,6 +76,7 @@ angular.module('app.routes', [
 
     // Controllers
     'uuid.indexControllers',
+    'uuid.createControllers',
 
     // Services
     'uuid.uuidResourceServices',
@@ -105,7 +106,7 @@ angular.module('app.routes', [
             controller: 'IndexUuidController'
         })
         .state('uuid.create', {
-            url: 'create',
+            url: '/create',
             templateUrl: 'api/ng-templates?template=uuid.create',
             controller: 'CreateUuidController'
         });
@@ -124,6 +125,55 @@ angular.module('app.authEventConstants', [])
     notAuthenticated: 'auth-not-authenticated',
     notAuthorized: 'auth-not-authorized'
 });
+
+'use_strict';
+
+angular.module('uuid.uuidResourceServices', ['ngResource'])
+
+.factory("UuidResource", [
+    '$resource',
+    function ($resource) {
+        return $resource(
+            "/api/uuid",
+            {},
+            {
+                'query': {method: 'GET', isArray: false}
+            }
+        );
+    }
+]);
+
+'use_strict';
+
+angular.module('uuid.createControllers', [
+    'ui.bootstrap.showErrors',
+
+    // Services
+    'uuid.uuidResourceServices',
+])
+
+.controller('CreateUuidController', [
+    '$scope', '$state', 'UuidResource', 'uuids',
+    function ($scope, $state, UuidResource, uuids) {
+        $scope.uuids = uuids;
+
+        $scope.create = function (uuid) {
+            $scope.$broadcast('show-errors-check-validity');
+
+            if ( $scope.createForm.$valid ) {
+                UuidResource.save(
+                    uuid,
+                    function (successResult) {
+                        $state.go('uuid.index', {}, { reload: true });
+                    },
+                    function (errorResult) {
+                        // Error state, we could implement something nice here.
+                    }
+                );
+            }
+        }
+    }
+]);
 
 'use_strict';
 
@@ -148,23 +198,6 @@ angular.module('uuid.indexControllers', ['ngTable'])
                 $defer.resolve(orderedData);
             }
         });
-    }
-]);
-
-'use_strict';
-
-angular.module('uuid.uuidResourceServices', ['ngResource'])
-
-.factory("UuidResource", [
-    '$resource',
-    function ($resource) {
-        return $resource(
-            "/api/uuid",
-            {},
-            {
-                'query': {method: 'GET', isArray: false}
-            }
-        );
     }
 ]);
 

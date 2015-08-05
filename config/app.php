@@ -143,6 +143,7 @@ return [
         ////////////////////////////////////////
 
         App\Providers\AppServiceProvider::class,
+        App\Providers\ComposerServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RepositoryServiceProvider::class,
         App\Providers\RouteServiceProvider::class,

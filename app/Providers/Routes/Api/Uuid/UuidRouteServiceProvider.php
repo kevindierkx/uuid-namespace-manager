@@ -30,6 +30,11 @@ class UuidRouteServiceProvider extends ServiceProvider
                 'uses' => 'UuidController@index',
             ]);
 
+            $router->post('uuid', [
+                'as' => 'uuid.store',
+                'uses' => 'UuidController@store',
+            ]);
+
         });
     }
 }

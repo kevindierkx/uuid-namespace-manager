@@ -25,6 +25,7 @@ class TemplatesController extends AbstractController
     /**
      * Return an angular template partial.
      *
+     * @param  \App\Http\Requests\Api\Angular\TemplateRequest  $request
      * @return \Illuminate\View\View
      */
     public function template(TemplateRequest $request)

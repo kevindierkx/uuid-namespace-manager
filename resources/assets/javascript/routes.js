@@ -5,6 +5,7 @@ angular.module('app.routes', [
 
     // Controllers
     'uuid.indexControllers',
+    'uuid.createControllers',
 
     // Services
     'uuid.uuidResourceServices',
@@ -34,7 +35,7 @@ angular.module('app.routes', [
             controller: 'IndexUuidController'
         })
         .state('uuid.create', {
-            url: 'create',
+            url: '/create',
             templateUrl: 'api/ng-templates?template=uuid.create',
             controller: 'CreateUuidController'
         });

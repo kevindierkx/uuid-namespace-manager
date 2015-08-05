@@ -34,7 +34,7 @@ class UuidNamespacesSeeder extends Seeder
         ]);
 
         DB::table('uuid_namespaces')->insert([
-            'name' => 'ISO_OID',
+            'name' => 'OID',
             'description' => 'Name string is an ISO OID',
             'uuid' => '6ba7b812-9dad-11d1-80b4-00c04fd430c8',
             'created_at' => $now,

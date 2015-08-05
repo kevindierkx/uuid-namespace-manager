@@ -8,6 +8,7 @@
     "bootstrap-sass-official": "~3.3.3",
     "angular-resource": "~1.4.1",
     "font-awesome": "~4.3.0",
-    "ng-table": "~0.5.4"
+    "ng-table": "~0.5.4",
+    "angular-bootstrap-show-errors": "~2.3.0"
   }
 }
