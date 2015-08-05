@@ -18,7 +18,6 @@ angular.module('uuid.indexControllers', ['ngTable'])
             counts: [],
             filterDelay: 200,
             getData: function ($defer, params) {
-                console.debug('execute');
                 var filteredData = params.filter() ?
                     $filter('filter')(uuids.data, params.filter()) :
                     uuids.data;
