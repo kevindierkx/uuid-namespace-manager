@@ -6,4 +6,6 @@
     <h1>Namespaces</h1>
 </div>
 
+@include('uuid.partials_index.filter')
+
 @include('uuid.partials_index.list')
