@@ -16,14 +16,14 @@ class CreateFormComposer
     }
 
     /**
-     * Compose the create namespace form.
+     * Compose the create form.
      *
      * @param  \Illuminate\View\View  $view
      */
     public function compose(View $view)
     {
         $view->with(
-            'createNamespaceForm',
+            'createForm',
             $this->formBuilder->create('App\Http\Forms\Uuid\CreateForm')
         );
     }

@@ -10,7 +10,7 @@
         </div>
 
         <div class="panel-body">
-            {!! form($createNamespaceForm) !!}
+            {!! form($createForm) !!}
         </div>
     </div>
 </form>

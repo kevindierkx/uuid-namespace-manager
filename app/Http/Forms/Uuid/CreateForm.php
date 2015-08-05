@@ -5,7 +5,7 @@ use Kris\LaravelFormBuilder\Form;
 class CreateForm extends Form
 {
     /**
-     * Build the authentication form.
+     * Build the create form.
      */
     public function buildForm()
     {
