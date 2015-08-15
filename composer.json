@@ -1,7 +1,7 @@
 {
-    "name": "laravel/laravel",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "name": "kevindierkx/uuid-namespace-manager",
+    "description": "UUID namespace manager.",
+    "keywords": ["manager", "uuid"],
     "license": "MIT",
     "type": "project",
     "require": {
